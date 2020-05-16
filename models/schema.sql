@@ -1,5 +1,17 @@
-DROP DATABASE IF EXISTS exampledb;
-CREATE DATABASE exampledb;
+DROP DATABASE IF EXISTS project2_db;
+CREATE DATABASE project2_db;
 
-DROP DATABASE IF EXISTS testdb;
-CREATE DATABASE testdb;
+CREATE TABLE beer (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    beer_name VARCHAR(200) NOT NULL,
+    beer_type VARCHAR(200) NOT NULL,
+    brewery VARCHAR(200) NOT NULL
+);
+
+CREATE TABLE user (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    user_nickname VARCHAR(200) NOT NULL,
+    user_favorite VARCHAR(200),
+    user_beer_foreignKey INTEGER,
+    user_zipcode VARCHAR(5) NOT NULL
+);
