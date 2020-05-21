@@ -8,7 +8,7 @@
   },
   "test": {
     "username": "root",
-    "password": "feed",
+    "password": "Playstation1!",
     "database": "testdb",
     "host": "localhost",
     "dialect": "mysql",
