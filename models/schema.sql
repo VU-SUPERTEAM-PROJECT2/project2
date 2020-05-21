@@ -1,6 +1,6 @@
 DROP DATABASE IF EXISTS project2_db;
 CREATE DATABASE project2_db;
-
+USE project2_db;
 CREATE TABLE beer (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     beer_name VARCHAR(200) NOT NULL,
