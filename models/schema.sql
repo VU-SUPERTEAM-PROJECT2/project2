@@ -1,18 +1,11 @@
 DROP DATABASE IF EXISTS project2_db;
 CREATE DATABASE project2_db;
-
-USE projec2_db;
-
-CREATE TABLE beer
-(
-    id INT NOT NULL
-    AUTO_INCREMENT PRIMARY KEY,
-    beer_name VARCHAR
-    (200) NOT NULL,
-    beer_type VARCHAR
-    (200) NOT NULL,
-    brewery VARCHAR
-    (200) NOT NULL
+USE project2_db;
+CREATE TABLE beer (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    beer_name VARCHAR(200) NOT NULL,
+    beer_type VARCHAR(200) NOT NULL,
+    brewery VARCHAR(200) NOT NULL
 );
 
     CREATE TABLE user
