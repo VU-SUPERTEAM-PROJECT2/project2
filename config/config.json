@@ -1,14 +1,14 @@
 {
   "development": {
     "username": "root",
-    "password": "feed",
-    "database": "exampledb",
+    "password": "Pizzaslut1!",
+    "database": "project2_db",
     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "feed",
+    "password": "Pizzaslut1!",
     "database": "testdb",
     "host": "localhost",
     "dialect": "mysql",
