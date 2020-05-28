@@ -7,7 +7,6 @@ module.exports = function(app) {
       res.json(dbQuizs);
     });
   });
-
   // // Create a new example
   // app.post("/api/quiz", function(req, res) {
   //   db.Example.create(req.body).then(function(dbExample) {
