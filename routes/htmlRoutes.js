@@ -19,6 +19,9 @@ module.exports = function(app) {
   app.get("/register", function(req, res) {
     res.render("registration");
   });
+  app.get("/profile", function(req, res) {
+    res.render("profile");
+  });
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
     res.render("404");
