@@ -1,4 +1,4 @@
-var db = require("../models");
+// var path = require("path");
 
 module.exports = function(app) {
   // Load index page
@@ -12,14 +12,13 @@ module.exports = function(app) {
   });
 
   // Load example page and pass in an example by id
-  app.get("/example/:id", function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function(
-      dbExample
-    ) {
-      res.render("example", {
-        example: dbExample
-      });
-    });
+  app.get("/quiz", function(req, res) {
+    // res.sendFile(path.join(__dirname, "../views/quiz.handlebars"));
+    res.render("quiz");
+  });
+  //render registration page
+  app.get("/register", function(req, res) {
+    res.render("registration");
   });
 
   app.get("/search", function(req, res) {
