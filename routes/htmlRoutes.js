@@ -13,7 +13,6 @@ module.exports = function(app) {
 
   // Load example page and pass in an example by id
   app.get("/quiz", function(req, res) {
-    // res.sendFile(path.join(__dirname, "../views/quiz.handlebars"));
     res.render("quiz");
   });
   //render registration page
