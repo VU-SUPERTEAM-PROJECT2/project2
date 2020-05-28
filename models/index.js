@@ -9,6 +9,7 @@ var config = require(__dirname + "/../config/config.json")[env];
 var db = {};
 console.log("process.env.MYSQL_PASSWORD: ", process.env.MYSQL_PASSWORD);
 console.log("config.password: ", config.password);
+console.log("final password: ", process.env.MYSQL_PASSWORD || config.password );
 if (config.use_env_variable) {
   var sequelize = new Sequelize(process.env[config.use_env_variable]);
 } else {
