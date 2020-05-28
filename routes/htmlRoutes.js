@@ -5,7 +5,7 @@ module.exports = function(app) {
   app.get("/", function(req, res) {
     db.Example.findAll({}).then(function(dbExamples) {
       res.render("index", {
-        msg: "Welcome!",
+        msg: "I Choose Brew!",
         examples: dbExamples
       });
     });
@@ -20,6 +20,10 @@ module.exports = function(app) {
         example: dbExample
       });
     });
+  });
+
+  app.get("/search", function(req, res) {
+    res.render("search");
   });
 
   // Render 404 page for any unmatched routes
