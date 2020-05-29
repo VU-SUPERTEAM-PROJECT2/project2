@@ -4,17 +4,12 @@ module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
     // db.Example.findAll({}).then(function(dbExamples) {
-<<<<<<< HEAD
-    res.render("index");
-    // });
-=======
     //   res.render("index", {
     //     msg: "I Choose Brew!",
     //     examples: dbExamples
     //   });
     // });
     res.render("index");
->>>>>>> 002b5d8931915367c38135712a3332d85ad1f561
   });
 
   // Load example page and pass in an example by id
