@@ -1,5 +1,6 @@
 // var path = require("path");
-
+var passport = require("passport");
+var trending = require("../models/trending");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
@@ -9,7 +10,7 @@ module.exports = function(app) {
     //     examples: dbExamples
     //   });
     // });
-    res.render("index");
+    res.render("index",{trending : trending});
   });
 
   // Load example page and pass in an example by id
@@ -33,4 +34,5 @@ module.exports = function(app) {
   app.get("*", function(req, res) {
     res.render("404");
   });
+ 
 };
