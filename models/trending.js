@@ -4,8 +4,8 @@ var axios = require("axios");
 
 var axios = require("axios");
 // var env = process.env.NODE_ENV;
-var client_id = "84F4224C1925D7EA68A3F19E962B060CB2C5F3F2";
-var client_secret = "9125283B9252CB44CF87D885C80195D506971E3D";
+var client_id = process.env.ClientID;
+var client_secret = process.env.ClientSecret;
 // We then run the request with axios module on a URL with a JSON
 
 var name1;
