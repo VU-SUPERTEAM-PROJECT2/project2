@@ -1,14 +1,14 @@
 {
   "development": {
     "username": "root",
-    "password": "Playstation1!",
-    "database": "project2_db",
+    "password": "feed",
+    "database": "exampledb",
     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "Playstation1!",
+    "password": "feed",
     "database": "testdb",
     "host": "localhost",
     "dialect": "mysql",
