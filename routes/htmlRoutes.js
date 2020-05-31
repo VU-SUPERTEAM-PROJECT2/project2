@@ -1,6 +1,11 @@
 // var path = require("path");
+<<<<<<< HEAD
 var passport = require("passport");
 var trending = require("../public/js/trending");
+=======
+// var passport = require("passport");
+var trending = require("../models/trending");
+>>>>>>> 44ef70efda80bb85ae948a0f65d10043997ddda1
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
@@ -20,6 +25,9 @@ module.exports = function(app) {
   //render registration page
   app.get("/register", function(req, res) {
     res.render("registration");
+  });
+  app.get("/profile", function(req, res) {
+    res.render("profile");
   });
 
   app.get("/search", function(req, res) {
