@@ -1,6 +1,36 @@
-module.exports = function(sequelize, DataTypes) {
-  var Quiz = sequelize.define("Quiz", {
-    question: DataTypes.STRING
-  });
-  return Quiz;
-};
+var beerData = [
+  { id: 1, scores: [0, 0, 0, 0, 0], favBeer: "Pilsner",},
+  { id: 2, scores: [0, 0, 0, 0, 1], favBeer: "Blonde" },
+  { id: 3, scores: [0, 0, 0, 1, 0], favBeer: "Sour" },
+  { id: 4, scores: [0, 0, 0, 1, 1], favBeer: "Cider" },
+  { id: 5, scores: [0, 0, 1, 0, 0], favBeer: "Blonde",},
+  { id: 6, scores: [0, 0, 1, 0, 1], favBeer: "Cider",},
+  { id: 7, scores: [0, 0, 1, 1, 0], favBeer: "Sour",},
+  { id: 8, scores: [0, 0, 1, 1, 1], favBeer: "Sour",},
+  { id: 9,  scores: [0, 1, 0, 0, 0], favBeer: "IPA",},
+  { id: 10,  scores: [0, 1, 0, 0, 1], favBeer: "IPA",},
+  { id: 11,  scores: [0, 1, 0, 1, 0], favBeer: "Sour",},
+  { id: 12,  scores: [0, 1, 0, 1, 1], favBeer: "IPA",},
+  { id: 13,  scores: [0, 1, 1, 0, 0], favBeer: "IPA",},
+  { id: 14,  scores: [0, 1, 1, 0, 1], favBeer: "IPA",},
+  { id: 15,  scores: [0, 1, 1, 1, 0], favBeer: "Sour",},
+  { id: 16,  scores: [0, 1, 1, 1, 1], favBeer: "Stout",},
+  { id: 17,  scores: [1, 0, 0, 0, 0], favBeer: "Wheat",},
+  { id: 18,  scores: [1, 0, 0, 0, 1], favBeer: "Cider",},
+  { id: 19,  scores: [1, 0, 0, 1, 0], favBeer: "Sour",},
+  { id: 20,  scores: [1, 0, 0, 1, 1], favBeer: "Cider",},
+  { id: 21,  scores: [1, 0, 1, 0, 0], favBeer: "Blonde",},
+  { id: 22,  scores: [1, 0, 1, 0, 1], favBeer: "Cider",},
+  { id: 23,  scores: [1, 0, 1, 1, 0], favBeer: "Sour",},
+  { id: 24,  scores: [1, 0, 1, 1, 1], favBeer: "Sour",},
+  { id: 25,  scores: [1, 1, 0, 0, 0], favBeer: "IPA",},
+  { id: 26,  scores: [1, 1, 0, 0, 1], favBeer: "Wheat",},
+  { id: 27,  scores: [1, 1, 0, 1, 0], favBeer: "Cider",},
+  { id: 28,  scores: [1, 1, 0, 1, 1], favBeer: "Cider",},
+  { id: 29,  scores: [1, 1, 1, 0, 0], favBeer: "IPA",},
+  { id: 30,  scores: [1, 1, 1, 0, 1], favBeer: "Stout",},
+  { id: 31,  scores: [1, 1, 1, 1, 0], favBeer: "Sour",},
+  { id: 32,  scores: [1, 1, 1, 1, 1], favBeer: "Sour",},
+];
+
+module.exports = beerData;

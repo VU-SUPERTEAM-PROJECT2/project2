@@ -9,9 +9,9 @@ module.exports = function(app) {
   });
 
   // Create a new example
-  app.post("/api/quiz", function(req, res) {
-    db.Quizs.create(req.body).then(function(dbQuizs) {
-      res.json(dbQuizs);
+  app.post("/api/user", function(req, res) {
+    db.Users.create(req.body).then(function(dbUsers) {
+      res.json(dbUsers);
     });
   });
 

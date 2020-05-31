@@ -1,5 +1,8 @@
 node_modules
 .env
+<<<<<<< HEAD
+config/config.json
+=======
 ds_store
 # Logs
 logs
@@ -61,3 +64,4 @@ typings/
 .fusebox/
 # DynamoDB Local files
 .dynamodb/
+>>>>>>> 002b5d8931915367c38135712a3332d85ad1f561
