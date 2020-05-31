@@ -1,5 +1,5 @@
 // var path = require("path");
-var passport = require("passport");
+// var passport = require("passport");
 var trending = require("../models/trending");
 module.exports = function(app) {
   // Load index page
@@ -20,6 +20,9 @@ module.exports = function(app) {
   //render registration page
   app.get("/register", function(req, res) {
     res.render("registration");
+  });
+  app.get("/profile", function(req, res) {
+    res.render("profile");
   });
 
   app.get("/search", function(req, res) {
