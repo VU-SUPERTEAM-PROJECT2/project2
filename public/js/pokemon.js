@@ -1,7 +1,7 @@
 var axios = require("axios");
 var Pokemon = require("./nonSQL_models/pokemon");
 
-// Grabbing and storing the data-animal property value from the button
+
 var ranNum = Math.floor(Math.random() * 152);
 // Constructing a queryURL using the random number
 var queryURL = "https://pokeapi.co/api/v2/pokemon/" + ranNum;
@@ -9,7 +9,7 @@ var queryURL = "https://pokeapi.co/api/v2/pokemon/" + ranNum;
 // Performing an AJAX request with the queryURL
 var pokemon;
 
-var generator = function(){axios
+axios
 
   .get(queryURL)
   // After data comes back from the request
@@ -25,6 +25,6 @@ var generator = function(){axios
     pokemon = newPokemon;
     
   });
-}
+
 
 module.exports =pokemon;
