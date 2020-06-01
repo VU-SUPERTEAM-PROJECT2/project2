@@ -1,31 +1,54 @@
 <div class="container-fluid mt-5 w-75">
-  
 
-<div class="card-deck">
-  <div class="card">
-    <img src="th.jpg" class="card-img-top" alt="pika">
-    <div class="card-body">
-      <h5 class="card-title">Pokemon Quiz</h5>
-      <p class="card-text">This quiz will tell you which pokemon you are based on the beer you like!</p>
-       <a href="/quiz" class="btn btn-primary">Take the Quiz!</a>
-       </div>
-  </div>
-  <div class="card">
-    <img src="brew.jpg" class="card-img-top" alt="map">
-    <div class="card-body">
-      <h5 class="card-title">Search for a brewery near you</h5>
-      <p class="card-text">search by zip code?</p>
-      <a href="/search" class="btn btn-primary">Search!</a>
+
+  <div class="card-deck">
+    <div class="card">
+      <img src="th.jpg" class="card-img-top" alt="pika">
+      <div class="card-body">
+        <h5 class="card-title">Pokemon Quiz</h5>
+        <p class="card-text">This quiz will tell you which pokemon you are based on the beer you like!</p>
+        <a href="/quiz" class="btn btn-primary">Take the Quiz!</a>
+      </div>
+    </div>
+    <div class="card">
+      <img src="brew.jpg" class="card-img-top" alt="map">
+      <div class="card-body">
+        <h5 class="card-title">Search for a brewery near you</h5>
+        <p class="card-text">search by zip code?</p>
+        <a href="/search" class="btn btn-primary">Search!</a>
+      </div>
+    </div>
+    <div class="card">
+      <img src="beer-oldest.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Trending beers</h5>
+        <p class="card-text">
+
+
+        <div class="container">
+          <div class="row">
+            {{#each trending}}
+            <div class="col-sm card">
+              <div class="row row-eq-height">
+                <h5 class="card-title">{{this.name}}</h5>
+              </div>
+              <div class="row">
+                <img src="{{this.label}}" class="card-img-top" alt="">
+              </div>
+              <div class="row">
+                <a href="{{this.website}}">{{this.brewery}}</a>
+                <p>{{this.type}}</p>
+              </div>
+            </div>
+
+            {{/each}}
+          </div>
         </div>
-  </div>
-  <div class="card">
-    <img src="beer-oldest.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Trending beers</h5>
-      <p class="card-text">{{trending}}</p>
+
+        </p>
+      </div>
     </div>
   </div>
-</div>
 </div>
 <script src="/js/index.js"></script>
 <style>
@@ -33,4 +56,13 @@
     max-height: 220px;
   }
 
+  .card-body {
+    background-color: rgba(256, 256, 256, 0.3);
+  }
+
+  .card {
+
+    background-color: rgba(256, 256, 256, 0.7);
+  }
+  
 </style>

@@ -1,3 +1,6 @@
+var beerAnswers = require("./nonSQL_models/quiz-object.js");
+console.log("All the beers" + beerAnswers);
+
 $(function() {
   // $("#ex11").slider({ step: 1, min: 0, max: 1 });
 
@@ -19,7 +22,21 @@ $(function() {
 
     // Put user input to the user api
     $.put("/api/user", userData, function(data) {
-      
+      console.log(data);
+      var body = res.req.body;
+      var userScore = body.scores;
+      var beerScores = beerAnswers.scores;
+      var scoresArr = [];
+
+      for (var i = 0; i < beerScores.length; i++) {
+        var match = beerScores[i];
+
+        if (!userScore === beerScores) {
+          throw err;
+        } else {
+          return match;
+        }
+      }
     });
   });
 });
