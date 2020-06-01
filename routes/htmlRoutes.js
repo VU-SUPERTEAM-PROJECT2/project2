@@ -1,7 +1,7 @@
 // var path = require("path");
 var db = require("../models");
 
-
+var searcher = require("../public/js/search");
 var trending = require("../public/js/trending");
 module.exports = function(app) {
   // Load index page
@@ -26,8 +26,8 @@ module.exports = function(app) {
   //POST url for search form
   app.post("/search-action", function(req, res){
     db.Search.create(req.body).then(function(dbSearch) {
-      console.log(dbSearch);
-      res.render("search", {search: dbSearch.search_word});
+     
+      res.render("search", {search: searcher(dbSearch.search_word)});
     });
   });
   //These two are POST urls, they're going to take in information
