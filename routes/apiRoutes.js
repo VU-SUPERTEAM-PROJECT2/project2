@@ -1,4 +1,5 @@
 var db = require("../models");
+console.log("Im the models" + db)
 
 module.exports = function(app) {
   // Get all examples test
@@ -10,6 +11,15 @@ module.exports = function(app) {
 
   // Create a new example
   app.post("/api/user", function(req, res) {
+    console.log(res)
+
+    var body = res.req.body;
+    var userScore = body.scores;
+
+    for (var i = 0; i < beerData.length; i++){
+
+    }
+
     db.Users.create(req.body).then(function(dbUsers) {
       res.json(dbUsers);
     });

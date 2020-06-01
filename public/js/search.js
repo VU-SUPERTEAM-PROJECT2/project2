@@ -11,4 +11,6 @@ axios
   )
   .then(function(response) {
     console.log(response.data.response.micro.items[0].beer.beer_name);
+  }).catch(function(err){
+    console.log(err)
   });
