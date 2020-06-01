@@ -1,3 +1,11 @@
+
+// import beer constructor
+// var Beer = require("./nonSQL_models/beers");
+// var env = process.env.NODE_ENV;
+var client_id = process.env.CLIENTID;
+var client_secret = process.env.CLIENTSECRET;
+
+
 // Get references to page elements
 var $searchWord = $("#search-word");
 var $submitBtn = $("#submit");
@@ -21,7 +29,7 @@ var handleFormSubmit = function(event) {
   // API.saveExample(example).then(function() {
   //   refreshExamples();
 //   // });
-$resultList.append(beerSearch);
+querySearch(beerSearch);
 console.log(beerSearch);
 
   $searchWord.val("");
@@ -29,3 +37,13 @@ console.log(beerSearch);
 
 // //event listener for submit button
 $submitBtn.on("click", handleFormSubmit);
+
+function querySearch(search){
+  $.ajax({
+    url: `https://api.untappd.com/v4/beer/trending?client_id=${client_id}&client_secret=${client_secret}`,
+    method: "GET"
+  }).then(function(response) {
+    console.log(response.data.response.micro.items[0].beer.beer_name);
+  });
+}
+
