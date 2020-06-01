@@ -21,7 +21,7 @@ var handleFormSubmit = function(event) {
   // API.saveExample(example).then(function() {
   //   refreshExamples();
 //   // });
-$resultList.append(beerSearch);
+// querySearch(beerSearch);
 console.log(beerSearch);
 
   $searchWord.val("");
@@ -29,3 +29,5 @@ console.log(beerSearch);
 
 // //event listener for submit button
 $submitBtn.on("click", handleFormSubmit);
+
+
