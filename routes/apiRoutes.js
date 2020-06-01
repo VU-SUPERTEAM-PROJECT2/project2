@@ -8,6 +8,12 @@ module.exports = function (app) {
     });
   });
 
+    app.put("/api/user", function(req, res) {
+    db.Users.update(req.body).then(function(dbUsers) {
+      res.json(dbUsers);
+    });
+  });
+
   // Create a new example
   app.get("/api/users/:id", function (req, res) {
     db.Users.findOne({ where: { id: req.params.id } }).then(function (dbUser) {
