@@ -47,6 +47,7 @@
 <body style="background: url(Cafe-background-1.jpg) no-repeat center center fixed; background-size: cover;">
 
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="/js/user.js"></script>
   {{{body}}}
 </body>
 <style>
@@ -63,20 +64,5 @@
     background-color: rgba(256, 256, 256, 0.7);
   }
 </style>
-<script>
-  //When a user logs in, set this id. 
-  //This will cause a user object (json) to be stored in sessionStorage
-  //An incognito window, or logout process can remove that user.
-  var userid = $("#userid").text();
-  console.log("userid: ", userid);
-  if (userid) {
-    var route = `api/users/${userid}`;
-    console.log(`getting user at ${route}`)
-    $.getJSON(route, function (user) {
-      console.log("user: ", user);
-      sessionStorage.setItem("user", JSON.stringify(user));
-    });
-  }
-</script>
 
 </html>
