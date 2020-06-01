@@ -1,3 +1,4 @@
+// for login
 module.exports = function(sequelize, DataTypes) {
   var Users = sequelize.define("Users", {
     user_nickname: DataTypes.STRING,
