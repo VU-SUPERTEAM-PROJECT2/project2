@@ -12,7 +12,7 @@ module.exports = function(app) {
     //     examples: dbExamples
     //   });
     // });
-    res.render("index",{trending : trending, username: "test"});
+    res.render("index",{trending : trending, nickname: "test"});
   });
 
   // Load example page and pass in an example by id
@@ -28,16 +28,16 @@ module.exports = function(app) {
   //from the login forms, check with the database, and redirect to
   //either the index page, or a 404 if the user isn't found. 
   app.post("/register", function(req, res){
-    db.Users.create(req.body).then(function(dbUsers) {
-      console.log("we made it!", dbUsers);
-      res.render("index");
+    db.Users.create(req.body).then(function(dbUser) {
+      console.log("we made it!", dbUser);
+      res.render("index", {userid: dbUser.id});
     });
   });
   app.post("/login", function(req, res){
     try{
-    db.Users.findOne({where: {user_nickname: req.body.user_nickname, user_password: req.body.user_password}}).then(function(dbUsers) {
-      console.log("we made it!", dbUsers);
-      res.render("index", {user: req.body});
+    db.Users.findOne({where: {user_nickname: req.body.user_nickname, user_password: req.body.user_password}}).then(function(dbUser) {
+      console.log("we made it!", dbUser);
+      res.render("index", {userid: dbUser.id});
     });
   }
   catch(error){

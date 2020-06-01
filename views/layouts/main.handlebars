@@ -39,6 +39,7 @@
     <a class="navbar-text" href="/login">
       {{!-- log in or user name if logged in --}}
       <div id="username">Login/Register</div>
+      <div id="userid" style="display: none;">{{userid}}</div>
     </a>
   </div>
 </nav>
@@ -63,9 +64,18 @@
   }
 </style>
 <script>
-  var getUser = function() {
-    console.log('getting user!!!');
-    return "hello!";
+  //When a user logs in, set this id. 
+  //This will cause a user object (json) to be stored in sessionStorage
+  //An incognito window, or logout process can remove that user.
+  var userid = $("#userid").text();
+  console.log("userid: ", userid);
+  if (userid) {
+    var route = `api/users/${userid}`;
+    console.log(`getting user at ${route}`)
+    $.getJSON(route, function (user) {
+      console.log("user: ", user);
+      sessionStorage.setItem("user", JSON.stringify(user));
+    });
   }
 </script>
 
