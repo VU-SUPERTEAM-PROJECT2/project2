@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-    var Beer = sequelize.define("Beer", {
+    var Beer2 = sequelize.define("Beer", {
       name: DataTypes.STRING,
       type: DataTypes.STRING,
       brewery: DataTypes.STRING,
@@ -7,6 +7,6 @@ module.exports = function(sequelize, DataTypes) {
       picture_URL: DataTypes.STRING
      
     });
-    return Beer;
+    return Beer2;
   };
   

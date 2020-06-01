@@ -1,7 +1,9 @@
-var Beer = function(name, brewery, description){
+var Beer = function(name, type, brewery, label, website){
     this.name = name;
+    this.type = type
     this.brewery = brewery;
-    this.description = description; 
+    this.label = label; 
+    this.website = website
 }
 
 module.exports = Beer;
