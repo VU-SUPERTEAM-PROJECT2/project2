@@ -1,7 +1,7 @@
 // var path = require("path");
 var db = require("../models");
 
-var passport = require("passport");
+
 var trending = require("../public/js/trending");
 module.exports = function(app) {
   // Load index page
@@ -23,7 +23,13 @@ module.exports = function(app) {
   app.get("/login", function(req, res) {
     res.render("login");
   });
-  
+  //POST url for search form
+  app.post("/search-action", function(req, res){
+    db.Search.create(req.body).then(function(dbSearch) {
+      console.log(dbSearch);
+      res.render("search", {search: dbSearch.search_word});
+    });
+  });
   //These two are POST urls, they're going to take in information
   //from the login forms, check with the database, and redirect to
   //either the index page, or a 404 if the user isn't found. 
