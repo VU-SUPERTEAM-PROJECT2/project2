@@ -1,4 +1,5 @@
-var beerAnswers = require("./nonSQL_models/quiz-object.js");
+var axios = require("axios");
+var beerAnswers = require("./nonSQL_models/quiz-object");
 console.log("All the beers" + beerAnswers);
 
 $(function() {
