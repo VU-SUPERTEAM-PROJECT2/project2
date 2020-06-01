@@ -1,49 +1,33 @@
-//this code needs to be repurposed for use on a website it is currently not useable in the project but is the basics of querying from openbeerDB
+
 var axios = require("axios");
-// var env = process.env.NODE_ENV;
-var client_id = "84F4224C1925D7EA68A3F19E962B060CB2C5F3F2";
-var client_secret = "9125283B9252CB44CF87D885C80195D506971E3D";
+var Beer = require("./nonSQL_models/beers");
 // We then run the request with axios module on a URL with a JSON
-axios
+
+// var env = process.env.NODE_ENV;
+var client_id = process.env.CLIENTID;
+var client_secret = process.env.CLIENTSECRET;
+// We then run the request with axios module on a URL with a JSON
+var beers = [];
+
+module.exports = function searcher(searchterm) {
+  axios
 
   .get(
-    `https://api.untappd.com/v4/beer/trending?client_id=${client_id}&client_secret=${client_secret}`
+    `https://api.untappd.com/v4/search/beer?q=${searchterm}client_id=${client_id}&client_secret=${client_secret}`
   )
   .then(function(response) {
-    console.log(response.data.response.micro.items[0].beer.beer_name);
-  }).catch(function(err){
-    console.log(err)
+    // console.log(response.data.response.micro.items[0].beer.beer_name);
+    for (i = 0; i < 5; i++) {
+      var newBeer = new Beer(
+        response.data.response.micro.items[i].beer.beer_name,
+        response.data.response.micro.items[i].beer.beer_style,
+        response.data.response.micro.items[i].brewery.brewery_name,
+        response.data.response.micro.items[i].beer.beer_label,
+        response.data.response.micro.items[i].brewery.contact.url
+      );
+      beers.push(newBeer);
+    }
   });
-// Get references to page elements
-var $searchWord = $("#search-word");
-var $submitBtn = $("#submit");
-var $resultList = $("#results-list");
 
-
-// // what happens when submit is pressed on search page
-var handleFormSubmit = function(event) {
-  event.preventDefault();
-
-//   // grabs value of the search form so that we can use it in our api request
-  var beerSearch = $searchWord.val().trim();
-
-  
-
-  if (!beerSearch) {
-    alert("You must enter a name of a beer");
-    return;
-  }
-
-  // API.saveExample(example).then(function() {
-  //   refreshExamples();
-//   // });
-// querySearch(beerSearch);
-console.log(beerSearch);
-
-  $searchWord.val("");
-};
-
-// //event listener for submit button
-$submitBtn.on("click", handleFormSubmit);
-
-
+return beers;
+}

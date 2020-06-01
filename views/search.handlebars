@@ -4,20 +4,38 @@
     <div class="col-8 offset-2">
 
       <form action="/search-action" method="post">
-                <div>
-                    
-                    <input type="text" name="search_word" />
-                </div>
-               
-                <div>
-                    <input type="submit" value="Search" />
-                </div>
-            </form>
+        <div>
+
+          <input type="text" name="search_word" />
+        </div>
+
+        <div>
+          <input type="submit" value="Search" />
+        </div>
+      </form>
     </div>
   </div>
   <div>
     <h3>Results:</h3>
-    <p id="results-list">{{search}} </p>
+    <div class="container">
+      <div class="row">
+        {{#each search}}
+        <div class="col-sm card">
+          <div class="row row-eq-height">
+            <h5 class="card-title">{{this.name}}</h5>
+          </div>
+          <div class="row">
+            <img src="{{this.label}}" class="card-img-top" alt="">
+          </div>
+          <div class="row">
+            <a href="{{this.website}}">{{this.brewery}}</a>
+            <p>{{this.type}}</p>
+          </div>
+        </div>
+
+        {{/each}}
+      </div>
+    </div>
 
   </div>
 </div>
