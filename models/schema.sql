@@ -15,16 +15,13 @@ CREATE TABLE beer
 
     CREATE TABLE user
     (
-        id INT NOT NULL
-        AUTO_INCREMENT PRIMARY KEY,
-    user_nickname VARCHAR
-        (200) NOT NULL,
-    user_favorite VARCHAR
-        (200),
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    user_nickname VARCHAR(200) NOT NULL,
+    user_favorite VARCHAR(200),
     user_beer_foreignKey INTEGER,
-    user_zipcode VARCHAR
-        (5) NOT NULL
+    user_zipcode VARCHAR(5) NOT NULL
     user_score INTEGER,
+    user_password varchar
 );
 
         CREATE TABLE questions

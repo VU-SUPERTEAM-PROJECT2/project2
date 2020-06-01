@@ -2,58 +2,67 @@
     <div class="container">
         <div class="col-lg-8">
 
-            <div class="jumbotron">
+            {{!-- <div class="jumbotron">
                 <h1 class="display-4">Beer Quiz!!</h1>
                 <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra
                     attention to featured content or information.</p>
             
             
-            </div>
-            <div class="container" id="questionsForm">
-                <!-- Question One -->
-                <h3><strong>Question 1</strong></h3>
-                <h5><strong>Do you like fruity?</strong></h5>
-                <label for="customRange2">FALSE</label>
-                <input type="range" class="custom-range" min="0" max="1" id="quest1"> TRUE
-                <br>
-                <br>
-                <!-- Question Two -->
-                <h3><strong>Question 2</strong></h3>
-                <h5><strong>Do you like Hops/Bitterness?</strong></h5>
-                <label for="customRange2">FALSE</label>
-                <input type="range" class="custom-range" min="0" max="1" id="quest2"> TRUE
-                <br>
-                <br>
-                <!-- Question Three -->
-                <h3><strong>Question 3</strong></h3>
-                <h5><strong>Do you like alcohol?</strong></h5>
-                <label for="customRange2">FALSE</label>
-                <input type="range" class="custom-range" min="0" max="1" id="quest3"> TRUE
-                <br>
-                <br>
-                <!-- Question Four -->
-                <h3><strong>Question 4</strong></h3>
-                <h5><strong>Do you like sour flavor?</strong></h5>
-                <label for="customRange2">FALSE</label>
-                <input type="range" class="custom-range" min="0" max="1" id="quest4"> TRUE
-                <br>
-                <br>
-                <!-- Question Five -->
-                <h3><strong>Question 5</strong></h3>
-                <h5><strong>Do you like sweet flavor?</strong></h5>
-                <label for="customRange2">FALSE</label>
-                <input type="range" class="custom-range" min="0" max="1" id="quest5"> TRUE
-            </div>
-            <br>
+            </div> --}}
 
-            <!-- Submit Button -->
-            <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit" data-toggle="modal"
-                data-target="#results-modal"><i class='fas fa-hands-helping' style='font-size:20px'></i> Submit
-                Answers</button>
+            <div class="card w-50 p-1 mr-3 mt-3">
+                <div class="card-header">
+                    <h5> <strong> Beer Quiz !</strong></h5>
+                </div>
+                <div class="card-body" id="questionsForm">
+                    <h3><strong>Question 1</strong></h3>
+                    <h5><strong>Do you like fruity?</strong></h5>
+                    <label for="customRange2">FALSE</label>
+                    <input type="range" class="custom-range" min="0" max="1" id="quest1"> TRUE
+                    <br>
+                    <br>
+                    <!-- Question Two -->
+                    <h3><strong>Question 2</strong></h3>
+                    <h5><strong>Do you like Hops/Bitterness?</strong></h5>
+                    <label for="customRange2">FALSE</label>
+                    <input type="range" class="custom-range" min="0" max="1" id="quest2"> TRUE
+                    <br>
+                    <br>
+                    <!-- Question Three -->
+                    <h3><strong>Question 3</strong></h3>
+                    <h5><strong>Do you like alcohol?</strong></h5>
+                    <label for="customRange2">FALSE</label>
+                    <input type="range" class="custom-range" min="0" max="1" id="quest3"> TRUE
+                    <br>
+                    <br>
+                    <!-- Question Four -->
+                    <h3><strong>Question 4</strong></h3>
+                    <h5><strong>Do you like sour flavor?</strong></h5>
+                    <label for="customRange2">FALSE</label>
+                    <input type="range" class="custom-range" min="0" max="1" id="quest4"> TRUE
+                    <br>
+                    <br>
+                    <!-- Question Five -->
+                    <h3><strong>Question 5</strong></h3>
+                    <h5><strong>Do you like sweet flavor?</strong></h5>
+                    <label for="customRange2">FALSE</label>
+                    <input type="range" class="custom-range" min="0" max="1" id="quest5"> TRUE
+
+                    {{!-- <h5 class="card-title">Quiz</h5> --}}
+                    {{!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> --}}
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit" data-toggle="modal"
+                        data-target="#results-modal"><i class='fas fa-hands-helping' style='font-size:20px'></i> Submit
+                        Answers</button>
+                </div>
+            </div>
 
         </div>
     </div>
+
+
 </div>
+
 
 
 <script src="js/quiz.js"></script>
