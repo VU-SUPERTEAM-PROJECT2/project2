@@ -2,6 +2,7 @@
 var db = require("../models");
 
 var searcher = require("../public/js/search");
+var pokemon = require("../public/js/pokemon");
 var trending = require("../public/js/trending");
 module.exports = function(app) {
   // Load index page
@@ -53,7 +54,11 @@ module.exports = function(app) {
   });
 
   app.get("/profile", function(req, res) {
-    res.render("profile");
+    (async () => {
+      var pokeResult = await pokemon()
+      res.render("profile", {pokemon: pokeResult});
+    })()
+    
   });
 
   app.get("/search", function(req, res) {

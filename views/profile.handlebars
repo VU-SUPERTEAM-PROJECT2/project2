@@ -13,13 +13,13 @@
 	<main class="pokemon-card">
 		<section class="title-row">
 			<p class="rarity" id="profile-nickname">User Name</p>
-			<h1 class="name">Pokemon</h1>
+			<h1 class="name">{{pokemon.name}}</h1>
 			<p class="health">50 HP</p>
 			<img class="element-icon" src="./hop-1.png">
 		</section>
 
 		<section class="character-img">
-			<img src="./charmander.jpg">
+			<img src="{{pokemon.URL}}">
 			<!-- <img
 				src="https://www.gamepur.com/files/styles/max_width_770px/public/images/tldr/2018/11/Charmander-2-GameRant.jpg?itok=d-NSYNS5"> -->
 		</section>
@@ -83,7 +83,7 @@
 
 </html>
 <script>
-if(loggedInUser){
-	$("#profile-nickname").text(loggedInUser.user_nickname);
-}
+	if (loggedInUser) {
+		$("#profile-nickname").text(loggedInUser.user_nickname);
+	}
 </script>
