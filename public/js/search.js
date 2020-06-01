@@ -14,11 +14,11 @@ module.exports = function searcher(searchterm) {
   axios
 
   .get(
-    `https://api.untappd.com/v4/beer/trending?client_id=${client_id}&client_secret=${client_secret}`
+    `https://api.untappd.com/v4/search/beer?q=${searchterm}client_id=${client_id}&client_secret=${client_secret}`
   )
   .then(function(response) {
     // console.log(response.data.response.micro.items[0].beer.beer_name);
-    for (i = 0; i < 3; i++) {
+    for (i = 0; i < 5; i++) {
       var newBeer = new Beer(
         response.data.response.micro.items[i].beer.beer_name,
         response.data.response.micro.items[i].beer.beer_style,
@@ -30,7 +30,5 @@ module.exports = function searcher(searchterm) {
     }
   });
 
-module.exports = function() {
-  return beers;
-};
+return beers;
 }
