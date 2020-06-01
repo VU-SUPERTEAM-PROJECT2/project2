@@ -1,10 +1,8 @@
-console.log("hello")
 $(function() {
   // $("#ex11").slider({ step: 1, min: 0, max: 1 });
 
   // Submit button click event
   $("#submit").on("click", function(event) {
-    console.log(event);
     event.preventDefault();
 
     // Holds user input
@@ -19,9 +17,9 @@ $(function() {
     };
     console.log(userData);
 
-    // Post user input to the user api
-    $.post("/api/user", userData, function(data) {
-      $("#match-name").text(data.name);
+    // Put user input to the user api
+    $.put("/api/user", userData, function(data) {
+      
     });
   });
 });

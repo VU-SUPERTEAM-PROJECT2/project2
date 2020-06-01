@@ -1,6 +1,7 @@
 // var path = require("path");
-// var passport = require("passport");
-var trending = require("../models/trending");
+
+var passport = require("passport");
+var trending = require("../public/js/trending");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
