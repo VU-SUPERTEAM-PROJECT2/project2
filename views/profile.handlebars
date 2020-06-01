@@ -8,17 +8,18 @@
 	<title>Pokemon Card</title>
 	<link rel="stylesheet" href="/styles/poke.css">
 </head>
+
 <body>
-<main class="pokemon-card">
+	<main class="pokemon-card">
 		<section class="title-row">
-			<p class="rarity">User Name</p>
+			<p class="rarity" id="profile-nickname">User Name</p>
 			<h1 class="name">Pokemon</h1>
 			<p class="health">50 HP</p>
 			<img class="element-icon" src="./hop-1.png">
 		</section>
 
 		<section class="character-img">
-			 <img src="./charmander.jpg"> 
+			<img src="./charmander.jpg">
 			<!-- <img
 				src="https://www.gamepur.com/files/styles/max_width_770px/public/images/tldr/2018/11/Charmander-2-GameRant.jpg?itok=d-NSYNS5"> -->
 		</section>
@@ -76,9 +77,13 @@
 			<p class="company">&copy;1995, 96, 96 Nintendo, Creatures, GAMEFREAK. &copy;1999 Wizards.</p>
 			<p class="collector-card-number">46/120</p>
 		</section>
-		
-      </main>
-    </body>
-    </html>
 
-    
+	</main>
+</body>
+
+</html>
+<script>
+if(loggedInUser){
+	$("#profile-nickname").text(loggedInUser.user_nickname);
+}
+</script>

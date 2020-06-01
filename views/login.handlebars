@@ -1,0 +1,42 @@
+<div class="row mt-3">
+    <div class="card offset-3">
+        <div class="card-header">
+            <div class="text-center">Welcome back!</div>
+        </div>
+        <div class="card-body">
+            <form action="/login" method="post">
+                <div>
+                    <label>Username:</label>
+                    <input type="text" name="user_nickname" />
+                </div>
+                <div>
+                    <label>Password:</label>
+                    <input type="password" name="user_password" />
+                </div>
+                <div>
+                    <input type="submit" value="Log In" />
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="card offset-1">
+        <div class="card-header">
+            <div class="text-center">Register new user!</div>
+        </div>
+        <div class="card-body">
+            <form action="/register" method="post">
+                <div>
+                    <label>Username:</label>
+                    <input type="text" name="user_nickname" />
+                </div>
+                <div>
+                    <label>Password:</label>
+                    <input type="password" name="user_password" />
+                </div>
+                <div>
+                    <input type="submit" value="Register" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
