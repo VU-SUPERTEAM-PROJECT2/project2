@@ -1,5 +1,4 @@
 
-
 var axios = require("axios");
 var Beer = require("./nonSQL_models/beers");
 // We then run the request with axios module on a URL with a JSON
